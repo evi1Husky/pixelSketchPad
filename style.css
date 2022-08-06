@@ -9,10 +9,11 @@ body {
 .instrumentPanel {
   display: flex;
   max-width: 150px;
-  max-height: 270px;
+  max-height: 500px;
   flex-direction: column;
   margin-bottom: 10px;
   margin-right: 10px;
+  margin-top: 5px;
   align-items: center;
 }
 
@@ -25,46 +26,32 @@ body {
 }
 
 .slider {
-  margin-top: 10px;
   margin-left: 10px;
 }
 
 .checkbox {
-  margin-top: 5px;
+  padding-top: 2px;
+  padding-bottom: 2px;
   padding-right: 5px;
 }
 
-.button {
-  margin-top: 15px;
-}
-
-.colorPickerButton {
-  margin-top: 13px;
-}
-
-#colorPicker {
-  width: 30px;
-  height: 30px;
-  text-align: center;
-}
-
 .colorPicker {
-  padding-right: 29px;
+  padding-top: 10px;
 }
 
-#colorButton {
-  width: 70px;
-  text-align: center;
+
+.colorPicker-button {
+  display: flex;
 }
 
 #eraserButton {
-  width: 70px;
+  width: 65px;
   text-align: center;
 }
 
 #clearAllButton {
   margin-top: 10px;
-  width: 70px;
+  width: 65px;
   text-align: center;
 }
 

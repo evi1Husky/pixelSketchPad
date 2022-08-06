@@ -17,7 +17,7 @@ function createPixelGrid(pixelSize, gridWidth) {
       pixel.classList.add("pixel");
       grid.appendChild(pixel);
     }
-    pixelEventListener(getCurrentColorCode());
+    pixelEventListener(getCurrentColorCode("#colorPicker"));
     return;
   }
   return createPixelGrid(pixelSize - 1, gridWidth);
@@ -69,23 +69,23 @@ function pixelEventListener(color) {
   });
 }
 
-function colorPicker() {
-  const colorPicker = document.querySelector("#colorPicker");
+function colorPicker(colorPickerNum) {
+  const colorPicker = document.querySelector(colorPickerNum);
   colorPicker.addEventListener("input", () => {
     pixelEventListener(colorPicker.value);
   });
 }
 
-function getCurrentColorCode() {
-  const colorPicker = document.querySelector("#colorPicker");
-  return colorPicker.value;
+function colorButton(colorButtonNum, colorPickerNum) {
+  const colorButton = document.querySelector(colorButtonNum);
+  colorButton.addEventListener("click", () => {
+    pixelEventListener(getCurrentColorCode(colorPickerNum));
+  });
 }
 
-function colorButton() {
-  const colorButton = document.querySelector("#colorButton");
-  colorButton.addEventListener("click", () => {
-    pixelEventListener(getCurrentColorCode());
-  });
+function getCurrentColorCode(colorPickerNum) {
+  const colorPicker = document.querySelector(colorPickerNum);
+  return colorPicker.value;
 }
 
 function eraserButton() {
@@ -129,8 +129,16 @@ createPixelGrid(15, 600);
 gridSizeSlider();
 gridSliderEventListener();
 gridToggleBox();
-pixelEventListener(getCurrentColorCode());
-colorPicker();
-colorButton();
+pixelEventListener(getCurrentColorCode("#colorPicker"));
+colorPicker("#colorPicker");
+colorPicker("#colorPicker2");
+colorPicker("#colorPicker3");
+colorPicker("#colorPicker4");
+colorPicker("#colorPicker5");
+colorButton("#colorButton", "#colorPicker");
+colorButton("#colorButton2", "#colorPicker2");
+colorButton("#colorButton3", "#colorPicker3");
+colorButton("#colorButton4", "#colorPicker4");
+colorButton("#colorButton5", "#colorPicker5");
 eraserButton();
 clearAllButton();
