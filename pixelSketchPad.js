@@ -81,6 +81,13 @@ function getCurrentColorCode() {
   return colorPicker.value;
 }
 
+function colorButton() {
+  const colorButton = document.querySelector("#colorButton");
+  colorButton.addEventListener("click", () => {
+    pixelEventListener(getCurrentColorCode());
+  });
+}
+
 function eraserButton() {
   const eraserButton = document.querySelector("#eraserButton");
   eraserButton.addEventListener("click", () => {
@@ -114,7 +121,7 @@ function NewGridSize(width) {
   const gridDimensions = document.querySelector("#gridWrap");
   gridDimensions.setAttribute("style", "width: " + width + "px" + "; " + 
     "height: " + width + "px" + "; " + "min-width: " + width + "px" + ";");
-  const pixelSize = document.querySelector("#pixelGridSlider")
+  const pixelSize = document.querySelector("#pixelGridSlider");
   createPixelGrid(pixelSize.value, width);
 }
 
@@ -124,5 +131,6 @@ gridSliderEventListener();
 gridToggleBox();
 pixelEventListener(getCurrentColorCode());
 colorPicker();
+colorButton();
 eraserButton();
 clearAllButton();

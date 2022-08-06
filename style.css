@@ -25,8 +25,8 @@ body {
 }
 
 .slider {
- margin-top: 10px;
- margin-left: 10px;
+  margin-top: 10px;
+  margin-left: 10px;
 }
 
 .checkbox {
@@ -36,6 +36,10 @@ body {
 
 .button {
   margin-top: 15px;
+}
+
+.colorPickerButton {
+  margin-top: 13px;
 }
 
 #colorPicker {
@@ -48,18 +52,20 @@ body {
   padding-right: 29px;
 }
 
+#colorButton {
+  width: 70px;
+  text-align: center;
+}
+
 #eraserButton {
   width: 70px;
   text-align: center;
 }
 
 #clearAllButton {
+  margin-top: 10px;
   width: 70px;
   text-align: center;
-}
-
-#gridWrap {
-  background: chocolate;
 }
 
 #pixelGrid {
@@ -76,4 +82,11 @@ body {
   content: "";
   display: block;
   padding-top: 100%;
+}
+
+#canvasContainer {
+  width: 600px;
+  height: 600px;
+  display: flex;
+  justify-content: center;
 }

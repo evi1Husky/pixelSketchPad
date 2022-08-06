@@ -11,42 +11,32 @@
     <div class="instrumentPanel">
       <div class="slider">
         <label id="gridSizeSliderLabel">Canvas size</label>
-        <input
-          type="range"
-          name="slider"
-          min="200"
-          max="600"
-          step="100"
-          value="600"
-          id="gridSizeSlider"
-        />
+        <input type="range" name="slider" min="100" max="600" step="100" 
+          value="600" id="gridSizeSlider" />
       </div>
       <div class="slider">
         <label id="gridSliderLabel">Pixel density</label>
-        <input
-          type="range"
-          name="slider"
-          min="8"
-          max="25"
-          value="15"
-          id="pixelGridSlider"
-        />
+        <input type="range" name="slider" min="8" max="25" value="15"
+          id="pixelGridSlider" />
       </div>
       <div class="checkbox">
         <input id="toggleGridCheckbox" type="checkbox" checked /> Pixel grid
       </div>
-      <div class="button">
+      <div class="colorPickerButton">
         <div class="colorPicker">
           <input type="color" id="colorPicker" value="#000000"> Color</div>
         </div>
       <div class="button">
+        <button id="colorButton">Color</button>
         <button id="eraserButton">Eraser</button>
-        <button id="clearAllButton">Clear all</button>
       </div>
+      <button id="clearAllButton">Clear all</button>
     </div>
-    <div id="gridWrap" style="width: 600px; height: 600px; min-width: 600px;">
-      <div id="pixelGrid"></div>
-    </div>
+      <div id="canvasContainer">
+        <div id="gridWrap" style="width: 600px; height: 600px; min-width: 600px;">
+          <div id="pixelGrid"></div>
+        </div>
+      </div>
     <script src="pixelSketchPad.js"></script>
   </body>
 </html>
