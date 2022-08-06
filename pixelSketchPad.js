@@ -31,8 +31,9 @@ function clearPixelGrid() {
 }
 
 function gridSliderEventListener() {
+  const gridSizeSlider = document.querySelector("#gridSizeSlider");
   document.querySelector("#pixelGridSlider").addEventListener("input", (e) => {
-    createPixelGrid(e.target.value, 600);
+    createPixelGrid(e.target.value, gridSizeSlider.value);
   });
 }
 
@@ -101,7 +102,24 @@ function pixelClear() {
   });
 }
 
+function gridSizeSlider() {
+  const gridSizeSlider = document.querySelector("#gridSizeSlider");
+  const makeNewGrid = () => NewGridSize(gridSizeSlider.value);
+  gridSizeSlider.addEventListener("input", makeNewGrid);
+}
+
+function NewGridSize(width) {
+  console.log(width);
+  clearPixelGrid();
+  const gridDimensions = document.querySelector("#gridWrap");
+  gridDimensions.setAttribute("style", "width: " + width + "px" + "; " + 
+    "height: " + width + "px" + "; " + "min-width: " + width + "px" + ";");
+  const pixelSize = document.querySelector("#pixelGridSlider")
+  createPixelGrid(pixelSize.value, width);
+}
+
 createPixelGrid(15, 600);
+gridSizeSlider();
 gridSliderEventListener();
 gridToggleBox();
 pixelEventListener(getCurrentColorCode());

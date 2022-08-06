@@ -16,6 +16,10 @@ body {
   align-items: center;
 }
 
+#gridSizeSliderLabel {
+  padding-left: 24px;
+}
+
 #gridSliderLabel {
   padding-left: 22px;
 }
@@ -35,9 +39,15 @@ body {
 }
 
 #colorPicker {
-  width: 70px;
+  width: 30px;
+  height: 30px;
   text-align: center;
 }
+
+.colorPicker {
+  padding-right: 29px;
+}
+
 #eraserButton {
   width: 70px;
   text-align: center;
@@ -48,15 +58,7 @@ body {
   text-align: center;
 }
 
-#saveButton {
-  width: 70px;
-  text-align: center;
-}
-
 #gridWrap {
-  width: 600px;
-  height: 600px;
-  min-width: 600px;
   background: chocolate;
 }
 
