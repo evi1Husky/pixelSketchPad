@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>pixelSketchPad</title>
+  </head>
+  <body>
+    <div class="instrumentPanel">
+      <div class="slider">
+        <label id="gridSliderLabel">Pixel density</label>
+        <input
+          type="range"
+          name="slider"
+          min="8"
+          max="25"
+          value="15"
+          id="pixelGridSlider"
+        />
+      </div>
+      <div class="checkbox">
+        <input id="toggleGridCheckbox" type="checkbox" checked /> Pixel grid
+      </div>
+      <div class="button">
+        <input type="color" id="colorPicker" value="#000000">
+      </div>
+      <div class="button">
+        <button id="eraserButton">Eraser</button>
+      </div>
+      <div class="button">
+        <button id="clearAllButton">Clear all</button>
+      </div>
+      <div class="button">
+        <button id="saveButton">Save</button>
+      </div>
+    </div>
+    <div id="gridWrap">
+      <div id="pixelGrid"></div>
+    </div>
+    <script src="pixelSketchPad.js"></script>
+  </body>
+</html>

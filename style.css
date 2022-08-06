@@ -1,0 +1,77 @@
+body {
+  background: dimgrey;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.instrumentPanel {
+  display: flex;
+  max-width: 150px;
+  max-height: 270px;
+  flex-direction: column;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  align-items: center;
+}
+
+#gridSliderLabel {
+  padding-left: 22px;
+}
+
+.slider {
+ margin-top: 10px;
+ margin-left: 10px;
+}
+
+.checkbox {
+  margin-top: 5px;
+  padding-right: 5px;
+}
+
+.button {
+  margin-top: 15px;
+}
+
+#colorPicker {
+  width: 70px;
+  text-align: center;
+}
+#eraserButton {
+  width: 70px;
+  text-align: center;
+}
+
+#clearAllButton {
+  width: 70px;
+  text-align: center;
+}
+
+#saveButton {
+  width: 70px;
+  text-align: center;
+}
+
+#gridWrap {
+  width: 600px;
+  height: 600px;
+  min-width: 600px;
+  background: chocolate;
+}
+
+#pixelGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(0px, 1fr));
+}
+
+.pixel {
+  background: white;
+  box-shadow: 0px 0px 0px 0.1px black inset;
+}
+
+.pixel:before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
