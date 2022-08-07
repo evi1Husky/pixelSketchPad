@@ -3,7 +3,28 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  flex-wrap: wrap;
+}
+
+#pixelGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(0px, 1fr));
+}
+
+.pixel {
+  background: white;
+  box-shadow: 0px 0px 0px 0.1px black inset;
+}
+
+.pixel:before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+
+#canvasContainer {
+  width: 600px;
+  height: 600px;
+  display: flex;
 }
 
 .instrumentPanel {
@@ -42,6 +63,7 @@ body {
 
 .colorPicker-button {
   display: flex;
+  margin-bottom: 10px;
 }
 
 #eraserButton {
@@ -55,25 +77,118 @@ body {
   text-align: center;
 }
 
-#pixelGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(0px, 1fr));
+#colorPicker {
+  padding: 0;
+  --color: #000000;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  margin-right: 10px;
 }
 
-.pixel {
-  background: white;
-  box-shadow: 0px 0px 0px 0.1px black inset;
+#colorPicker::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  width: 150%;
+  height: 150%;
+  background: var(--color);
+  border-radius: 50%;
 }
 
-.pixel:before {
-  content: "";
-  display: block;
-  padding-top: 100%;
+#colorPicker2 {
+  padding: 0;
+  --color: #FB3678;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  margin-right: 10px;
 }
 
-#canvasContainer {
-  width: 600px;
-  height: 600px;
+#colorPicker2::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  width: 150%;
+  height: 150%;
+  background: var(--color);
+  border-radius: 50%;
+}
+
+#colorPicker3 {
+  padding: 0;
+  --color: #04FF00;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  margin-right: 10px;
+}
+
+#colorPicker3::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  width: 150%;
+  height: 150%;
+  background: var(--color);
+  border-radius: 50%;
+}
+
+#colorPicker4 {
+  padding: 0;
+  --color: #BF3AFD;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  margin-right: 10px;
+}
+
+#colorPicker4::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  width: 150%;
+  height: 150%;
+  background: var(--color);
+  border-radius: 50%;
+}
+
+#colorPicker5 {
+  padding: 0;
+  --color: #4E6BFD;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  margin-right: 10px;
+}
+
+#colorPicker5::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  width: 150%;
+  height: 150%;
+  background: var(--color);
+  border-radius: 50%;
+}
+
+.eraseButtons {
+  margin-top: 7px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
 }

@@ -125,6 +125,13 @@ function NewGridSize(width) {
   createPixelGrid(pixelSize.value, width);
 }
 
+function colorPickerStyle(colorPickerNum) {
+  let colorPicker = document.getElementById(colorPickerNum);
+  colorPicker.addEventListener('input',()=>{
+    colorPicker.style.setProperty('--color',colorPicker.value);
+  })
+}
+
 createPixelGrid(15, 600);
 gridSizeSlider();
 gridSliderEventListener();
@@ -140,5 +147,10 @@ colorButton("#colorButton2", "#colorPicker2");
 colorButton("#colorButton3", "#colorPicker3");
 colorButton("#colorButton4", "#colorPicker4");
 colorButton("#colorButton5", "#colorPicker5");
+colorPickerStyle("colorPicker");
+colorPickerStyle("colorPicker2");
+colorPickerStyle("colorPicker3");
+colorPickerStyle("colorPicker4");
+colorPickerStyle("colorPicker5");
 eraserButton();
 clearAllButton();
