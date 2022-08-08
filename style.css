@@ -1,3 +1,7 @@
+html, body {
+ height:100%;
+}
+
 body {
   background: dimgrey;
   display: flex;
@@ -8,11 +12,13 @@ body {
 #pixelGrid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(0px, 1fr));
+  background-color: transparent;
+
 }
 
 .pixel {
-  background: white;
   box-shadow: 0px 0px 0px 0.1px black inset;
+  background: white;
 }
 
 .pixel:before {
@@ -25,6 +31,7 @@ body {
   width: 600px;
   height: 600px;
   display: flex;
+  background-color: transparent;
 }
 
 .instrumentPanel {
@@ -72,7 +79,13 @@ body {
 }
 
 #clearAllButton {
-  margin-top: 10px;
+  margin-top: 5px;
+  width: 65px;
+  text-align: center;
+}
+
+#saveButton {
+  margin-top: 5px;
   width: 65px;
   text-align: center;
 }
@@ -187,8 +200,40 @@ body {
   border-radius: 50%;
 }
 
-.eraseButtons {
+.buttons {
   margin-top: 7px;
   display: flex;
   flex-direction: column;
+}
+
+#saveContainer {
+
+}
+
+#popUpContent {
+  display: none;
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  width: 50%;
+  height: 50%;
+  padding: 16px;
+  border: 16px solid orange;
+  background-color: white;
+  z-index:1002;
+  overflow: auto;
+}
+
+#popUpOverlay {
+  display: none;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index:1001;
+  -moz-opacity: 0.8;
+  opacity:.80;
+  filter: alpha(opacity=80);
 }

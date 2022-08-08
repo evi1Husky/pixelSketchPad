@@ -11,49 +11,71 @@
     <div class="instrumentPanel">
       <div class="slider">
         <label id="gridSizeSliderLabel">Canvas size</label>
-        <input type="range" name="slider" min="100" max="600" step="100" 
-          value="600" id="gridSizeSlider" />
+        <input
+          type="range"
+          name="slider"
+          min="100"
+          max="600"
+          step="100"
+          value="600"
+          id="gridSizeSlider"
+        />
       </div>
       <div class="slider">
         <label id="gridSliderLabel">Pixel density</label>
-        <input type="range" name="slider" min="8" max="25" value="15"
-          id="pixelGridSlider" />
+        <input
+          type="range"
+          name="slider"
+          min="5"
+          max="30"
+          value="15"
+          id="pixelGridSlider"
+        />
       </div>
       <div class="checkbox">
         <input id="toggleGridCheckbox" type="checkbox" checked /> Pixel grid
       </div>
       <div class="colorPicker">
         <div class="colorPicker-button">
-          <input type="color" id="colorPicker" value="#000000">
+          <input type="color" id="colorPicker" value="#000000" />
           <button id="colorButton">Color 1</button>
         </div>
         <div class="colorPicker-button">
-          <input type="color" id="colorPicker2" value="#FB3678">
+          <input type="color" id="colorPicker2" value="#FB3678" />
           <button id="colorButton2">Color 2</button>
         </div>
         <div class="colorPicker-button">
-          <input type="color" id="colorPicker3" value="#04FF00">
+          <input type="color" id="colorPicker3" value="#04FF00" />
           <button id="colorButton3">Color 3</button>
         </div>
         <div class="colorPicker-button">
-          <input type="color" id="colorPicker4" value="#BF3AFD">
+          <input type="color" id="colorPicker4" value="#BF3AFD" />
           <button id="colorButton4">Color 4</button>
         </div>
         <div class="colorPicker-button">
-          <input type="color" id="colorPicker5" value="#4E6BFD">
+          <input type="color" id="colorPicker5" value="#4E6BFD" />
           <button id="colorButton5">Color 5</button>
         </div>
       </div>
-      <div class="eraseButtons">
+      <div class="buttons">
         <button id="eraserButton">Eraser</button>
+        <button id="saveButton">Save</button>
         <button id="clearAllButton">Clear all</button>
       </div>
     </div>
-      <div id="canvasContainer">
-        <div id="gridWrap" style="width: 600px; height: 600px; min-width: 600px;">
-          <div id="pixelGrid"></div>
-        </div>
+    <div id="canvasContainer">
+      <div id="gridWrap" style="width: 600px; height: 600px; min-width: 600px">
+        <div id="pixelGrid"></div>
       </div>
+    </div>
+    <div id="saveContainer">
+      <div id="popUpContent">
+        <button id="closePopUp">x</button>
+        <div id="saveImage"></div>
+      </div>
+      <div id="popUpOverlay"></div>
+    </div>
+    <script src="html2canvas.js"></script>
     <script src="pixelSketchPad.js"></script>
   </body>
 </html>
