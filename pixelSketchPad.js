@@ -38,7 +38,7 @@ function gridSliderEventListener() {
 }
 
 function gridToggleBox() {
-  const gridCheckbox = document.querySelector("#toggleGridCheckbox");
+  const gridCheckbox = document.querySelector("#flexCheckChecked");
   const gridCSS = document.createElement("style");
   gridCheckbox.addEventListener("change", function () {
     if (gridCheckbox.checked) {
@@ -144,36 +144,6 @@ function colorPickerStyle(colorPickerNum) {
   });
 }
 
-function saveButton() {
-  const saveButton = document.querySelector("#saveButton");
-  saveButton.addEventListener("click", () => {
-    save();
-  });
-}
-
-function save() {
-  const canvasContainer = document.createElement("div");
-  canvasContainer.setAttribute("id", "saveImage");
-  const content = document.getElementById("popUpContent");
-  content.append(canvasContainer);
-  const savePopUp = document.querySelector("#saveImage");
-  html2canvas(document.querySelector("#pixelGrid")).then((canvas) => {
-    savePopUp.appendChild(canvas);
-    document.getElementById("popUpContent").style.display = "block";
-    document.getElementById("popUpOverlay").style.display = "block";
-  });
-}
-
-function closePopUpButton() {
-  const closeButton = document.getElementById("closePopUp");
-  closeButton.addEventListener("click", () => {
-    document.getElementById("popUpContent").style.display = "none";
-    document.getElementById("popUpOverlay").style.display = "none";
-    const canvasContainer = document.getElementById("saveImage");
-    canvasContainer.remove();
-  });
-}
-
 createPixelGrid(15, 600);
 gridSizeSlider();
 gridSliderEventListener();
@@ -196,5 +166,3 @@ colorPickerStyle("colorPicker4");
 colorPickerStyle("colorPicker5");
 eraserButton();
 clearAllButton();
-saveButton();
-closePopUpButton();

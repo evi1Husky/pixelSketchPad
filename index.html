@@ -22,7 +22,7 @@
         />
       </div>
       <div class="slider">
-        <label id="gridSliderLabel">Pixel density</label>
+        <label id="gridSliderLabel">Pixel size</label>
         <input
           type="range"
           name="slider"
@@ -32,35 +32,43 @@
           id="pixelGridSlider"
         />
       </div>
-      <div class="checkbox">
-        <input id="toggleGridCheckbox" type="checkbox" checked /> Pixel grid
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="flexCheckChecked"
+          checked
+        />
+        <label class="form-check-label" for="flexCheckChecked">
+          Pixel grid
+        </label>
       </div>
       <div class="colorPicker">
         <div class="colorPicker-button">
           <input type="color" id="colorPicker" value="#000000" />
-          <button id="colorButton">Color 1</button>
+          <button id="colorButton" class="button">Color 1</button>
         </div>
         <div class="colorPicker-button">
           <input type="color" id="colorPicker2" value="#FB3678" />
-          <button id="colorButton2">Color 2</button>
+          <button id="colorButton2" class="button">Color 2</button>
         </div>
         <div class="colorPicker-button">
           <input type="color" id="colorPicker3" value="#04FF00" />
-          <button id="colorButton3">Color 3</button>
+          <button id="colorButton3" class="button">Color 3</button>
         </div>
         <div class="colorPicker-button">
           <input type="color" id="colorPicker4" value="#BF3AFD" />
-          <button id="colorButton4">Color 4</button>
+          <button id="colorButton4" class="button">Color 4</button>
         </div>
         <div class="colorPicker-button">
           <input type="color" id="colorPicker5" value="#4E6BFD" />
-          <button id="colorButton5">Color 5</button>
+          <button id="colorButton5" class="button">Color 5</button>
         </div>
       </div>
       <div class="buttons">
-        <button id="eraserButton">Eraser</button>
-        <button id="saveButton">Save</button>
-        <button id="clearAllButton">Clear all</button>
+        <button id="eraserButton" class="button">Eraser</button>
+        <button id="clearAllButton" class="button">Clear all</button>
       </div>
     </div>
     <div id="canvasContainer">
@@ -68,14 +76,6 @@
         <div id="pixelGrid"></div>
       </div>
     </div>
-    <div id="saveContainer">
-      <div id="popUpContent">
-        <button id="closePopUp">x</button>
-        <div id="saveImage"></div>
-      </div>
-      <div id="popUpOverlay"></div>
-    </div>
-    <script src="html2canvas.js"></script>
     <script src="pixelSketchPad.js"></script>
   </body>
 </html>
