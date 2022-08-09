@@ -1,5 +1,35 @@
+body, html {
+  overflow: hidden
+}
+
 body {
   background: #2f2f33;
+  display: flex;
+  flex-direction: column;
+  margin: 0px;
+}
+
+.titleBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 10px;
+  background: #3d3d43;
+  box-shadow: 0px 0.1px 0.1px 0.1px black;
+}
+
+h1 {
+  color: #d7dadc;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 0px;
+  padding-bottom: 10px;
+  padding-top: 7px;
+}
+
+
+.app {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -14,7 +44,7 @@ body {
 }
 
 .pixel {
-  box-shadow: 0px 0px 0px 0.1px black inset;
+  box-shadow: 0px 0px 0px 0.1px;
   background: #d7dadc;
 }
 

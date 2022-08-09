@@ -42,9 +42,9 @@ function gridToggleBox() {
   const gridCSS = document.createElement("style");
   gridCheckbox.addEventListener("change", function () {
     if (gridCheckbox.checked) {
-      gridCSS.innerHTML = ".pixel {box-shadow: 0px 0px 0px 0.1px black inset;}";
+      gridCSS.innerHTML = ".pixel {box-shadow: 0px 0px 0px 0.1px;}";
     } else {
-      gridCSS.innerHTML = ".pixel {box-shadow: 0px 0px 0px 0.0px black inset;}";
+      gridCSS.innerHTML = ".pixel {box-shadow: 0px 0px;}";
     }
   });
   document.body.appendChild(gridCSS);
@@ -159,13 +159,13 @@ function appAdjustForMobile(browserWidth) {
     const gridSizeSlider = document.querySelector("#gridSizeSlider");
     gridDimensions.setAttribute(
       "style",
-      "300px; height: 350px; min-width: 360px"
+      "350px; height: 350px; min-width: 350px"
     );
-    containerDimensions.setAttribute("style", "width: 360px; height: 360px");
-    gridSizeSlider.setAttribute("max", "360");
-    gridSizeSlider.setAttribute("value", "360");
-    gridSizeSlider.setAttribute("step", "20");
-    createPixelGrid(15, 360);
+    containerDimensions.setAttribute("style", "width: 350px; height: 350px");
+    gridSizeSlider.setAttribute("max", "350");
+    gridSizeSlider.setAttribute("value", "350");
+    gridSizeSlider.setAttribute("step", "10");
+    createPixelGrid(15, 350);
   } else {
     createPixelGrid(15, 600);
   }
