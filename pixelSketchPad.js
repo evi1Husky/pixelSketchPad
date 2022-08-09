@@ -91,7 +91,7 @@ function getCurrentColorCode(colorPickerNum) {
 function eraserButton() {
   const eraserButton = document.querySelector("#eraserButton");
   eraserButton.addEventListener("click", () => {
-    pixelEventListener("white");
+    pixelEventListener("#D7DADC");
   });
 }
 
@@ -105,7 +105,7 @@ function clearAllButton() {
 function pixelClear() {
   const pixels = document.querySelectorAll(".pixel");
   pixels.forEach((pixel) => {
-    pixel.setAttribute("style", "background: white;");
+    pixel.setAttribute("style", "background: #D7DADC;");
   });
 }
 

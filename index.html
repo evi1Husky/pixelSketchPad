@@ -10,10 +10,10 @@
   <body>
     <div class="instrumentPanel">
       <div class="slider">
-        <label id="gridSizeSliderLabel">Canvas size</label>
+        <label for="gridSizeSlider" class="form-label">Canvas size</label>
         <input
           type="range"
-          name="slider"
+          class="form-range"
           min="100"
           max="600"
           step="100"
@@ -22,10 +22,10 @@
         />
       </div>
       <div class="slider">
-        <label id="gridSliderLabel">Pixel size</label>
+        <label for="gridSizeSlider" class="form-label">Pixel size</label>
         <input
           type="range"
-          name="slider"
+          class="form-range"
           min="5"
           max="30"
           value="15"
@@ -44,31 +44,31 @@
           Pixel grid
         </label>
       </div>
+      <div class="buttons">
+        <button id="clearAllButton" class="button">Clear all</button>
+        <button id="eraserButton" class="button">Eraser</button>
+      </div>
       <div class="colorPicker">
         <div class="colorPicker-button">
           <input type="color" id="colorPicker" value="#000000" />
           <button id="colorButton" class="button">Color 1</button>
         </div>
         <div class="colorPicker-button">
-          <input type="color" id="colorPicker2" value="#FB3678" />
+          <input type="color" id="colorPicker2" value="#FF5C92" />
           <button id="colorButton2" class="button">Color 2</button>
         </div>
         <div class="colorPicker-button">
-          <input type="color" id="colorPicker3" value="#04FF00" />
+          <input type="color" id="colorPicker3" value="#83FD81" />
           <button id="colorButton3" class="button">Color 3</button>
         </div>
         <div class="colorPicker-button">
-          <input type="color" id="colorPicker4" value="#BF3AFD" />
+          <input type="color" id="colorPicker4" value="#867EF7" />
           <button id="colorButton4" class="button">Color 4</button>
         </div>
         <div class="colorPicker-button">
-          <input type="color" id="colorPicker5" value="#4E6BFD" />
+          <input type="color" id="colorPicker5" value="#73D1E8" />
           <button id="colorButton5" class="button">Color 5</button>
         </div>
-      </div>
-      <div class="buttons">
-        <button id="eraserButton" class="button">Eraser</button>
-        <button id="clearAllButton" class="button">Clear all</button>
       </div>
     </div>
     <div id="canvasContainer">
