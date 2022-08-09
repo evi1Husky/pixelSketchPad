@@ -50,19 +50,19 @@ function gridToggleBox() {
   document.body.appendChild(gridCSS);
 }
 
-let buttonPressed = 0;
+let mouseButtonPressed = 0;
 document.body.onmousedown = function () {
-  buttonPressed = 1;
+  mouseButtonPressed = 1;
 };
 document.body.onmouseup = function () {
-  buttonPressed = 0;
+  mouseButtonPressed = 0;
 };
 
 function pixelEventListener(color) {
   const pixels = document.querySelectorAll(".pixel");
   pixels.forEach((pixel) => {
     pixel.addEventListener("mouseover", () => {
-      if (buttonPressed == 1) {
+      if (mouseButtonPressed == 1) {
         pixel.setAttribute("style", "background: " + color + ";");
       }
     });
@@ -144,7 +144,34 @@ function colorPickerStyle(colorPickerNum) {
   });
 }
 
-createPixelGrid(15, 600);
+function getBrowserWidth() {
+  const width =
+    window.innerWidth ||
+    document.documentElement.clientWidth ||
+    document.body.clientWidth;
+  return width;
+}
+
+function appAdjustForMobile(browserWidth) {
+  if (browserWidth <= 600) {
+    const gridDimensions = document.querySelector("#gridWrap");
+    const containerDimensions = document.querySelector("#canvasContainer");
+    const gridSizeSlider = document.querySelector("#gridSizeSlider");
+    gridDimensions.setAttribute(
+      "style",
+      "300px; height: 350px; min-width: 360px"
+    );
+    containerDimensions.setAttribute("style", "width: 360px; height: 360px");
+    gridSizeSlider.setAttribute("max", "360");
+    gridSizeSlider.setAttribute("value", "360");
+    gridSizeSlider.setAttribute("step", "20");
+    createPixelGrid(15, 360);
+  } else {
+    createPixelGrid(15, 600);
+  }
+}
+
+appAdjustForMobile(getBrowserWidth());
 gridSizeSlider();
 gridSliderEventListener();
 gridToggleBox();
