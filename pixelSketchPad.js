@@ -154,20 +154,18 @@ function getBrowserWidth() {
 
 function appAdjustForMobile(browserWidth) {
   if (browserWidth <= 600) {
-    const gridDimensions = document.querySelector("#gridWrap");
-    const containerDimensions = document.querySelector("#canvasContainer");
+    const grid = document.querySelector("#gridWrap");
+    const container = document.querySelector("#canvasContainer");
     const gridSizeSlider = document.querySelector("#gridSizeSlider");
-    gridDimensions.setAttribute(
-      "style",
-      "350px; height: 350px; min-width: 350px"
-    );
-    containerDimensions.setAttribute("style", "width: 350px; height: 350px");
+    grid.setAttribute("style", "350px; height: 350px; min-width: 350px");
+    container.setAttribute("style", "width: 350px; height: 350px");
+    container.setAttribute("style", "justify-content: center;");
     gridSizeSlider.setAttribute("max", "350");
     gridSizeSlider.setAttribute("value", "350");
     gridSizeSlider.setAttribute("step", "10");
     createPixelGrid(15, 350);
   } else {
-    createPixelGrid(15, 600);
+    createPixelGrid(15, 540);
   }
 }
 
@@ -181,15 +179,18 @@ colorPicker("#colorPicker2");
 colorPicker("#colorPicker3");
 colorPicker("#colorPicker4");
 colorPicker("#colorPicker5");
+colorPicker("#colorPicker6");
 colorButton("#colorButton", "#colorPicker");
 colorButton("#colorButton2", "#colorPicker2");
 colorButton("#colorButton3", "#colorPicker3");
 colorButton("#colorButton4", "#colorPicker4");
 colorButton("#colorButton5", "#colorPicker5");
+colorButton("#colorButton6", "#colorPicker6");
 colorPickerStyle("colorPicker");
 colorPickerStyle("colorPicker2");
 colorPickerStyle("colorPicker3");
 colorPickerStyle("colorPicker4");
 colorPickerStyle("colorPicker5");
+colorPickerStyle("colorPicker6");
 eraserButton();
 clearAllButton();
