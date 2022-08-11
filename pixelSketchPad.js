@@ -23,6 +23,29 @@ function createPixelGrid(pixelSize, gridWidth) {
   return createPixelGrid(pixelSize - 1, gridWidth);
 }
 
+function pixelEventListener(color) {
+  const pixels = document.querySelectorAll(".pixel");
+  let mouseButtonPressed = false;
+  document.body.onmousedown = function () {
+    mouseButtonPressed = true;
+  };
+  document.body.onmouseup = function () {
+    mouseButtonPressed = false;
+  };
+  pixels.forEach((pixel) => {
+    pixel.addEventListener("mouseover", () => {
+      if (mouseButtonPressed) {
+        pixel.setAttribute("style", "background: " + color + ";");
+      }
+    });
+  });
+  pixels.forEach((pixel) => {
+    pixel.addEventListener("mousedown", () => {
+      pixel.setAttribute("style", "background: " + color + ";");
+    });
+  });
+}
+
 function clearPixelGrid() {
   const pixels = document.getElementsByClassName("pixel");
   while (pixels[0]) {
@@ -50,29 +73,6 @@ function gridToggleBox() {
   document.body.appendChild(gridCSS);
 }
 
-function pixelEventListener(color) {
-  let mouseButtonPressed = 0;
-  document.body.onmousedown = function () {
-    mouseButtonPressed = 1;
-  };
-  document.body.onmouseup = function () {
-    mouseButtonPressed = 0;
-  };
-  const pixels = document.querySelectorAll(".pixel");
-  pixels.forEach((pixel) => {
-    pixel.addEventListener("mouseover", () => {
-      if (mouseButtonPressed == 1) {
-        pixel.setAttribute("style", "background: " + color + ";");
-      }
-    });
-  });
-  pixels.forEach((pixel) => {
-    pixel.addEventListener("click", () => {
-        pixel.setAttribute("style", "background: " + color + ";");
-    });
-  });
-}
-
 function colorPicker(colorPickerNum) {
   const colorPicker = document.querySelector(colorPickerNum);
   colorPicker.addEventListener("input", () => {
@@ -95,7 +95,7 @@ function getCurrentColorCode(colorPickerNum) {
 function eraserButton() {
   const eraserButton = document.querySelector("#eraserButton");
   eraserButton.addEventListener("click", () => {
-    pixelEventListener("#D7DADC");
+    pixelEventListener("#c8cbcd");
   });
 }
 
@@ -109,7 +109,7 @@ function clearAllButton() {
 function pixelClear() {
   const pixels = document.querySelectorAll(".pixel");
   pixels.forEach((pixel) => {
-    pixel.setAttribute("style", "background: #D7DADC;");
+    pixel.setAttribute("style", "background: #c8cbcd;");
   });
 }
 
