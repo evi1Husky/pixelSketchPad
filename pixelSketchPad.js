@@ -67,7 +67,7 @@ function gridToggleBox() {
     if (gridCheckbox.checked) {
       gridCSS.innerHTML = ".pixel {box-shadow: 0px 0px 0px 0.1px;}";
     } else {
-      gridCSS.innerHTML = ".pixel {box-shadow: 0px 0px 0px 0px;}";
+      gridCSS.innerHTML = ".pixel {box-shadow: 0px 0px;}";
     }
   });
   document.body.appendChild(gridCSS);
@@ -148,31 +148,7 @@ function colorPickerStyle(colorPickerNum) {
   });
 }
 
-function getBrowserWidth() {
-  const width =
-    window.innerWidth ||
-    document.documentElement.clientWidth ||
-    document.body.clientWidth;
-  return width;
-}
-
-function appAdjustForMobile(browserWidth) {
-  if (browserWidth <= 600) {
-    const grid = document.querySelector("#gridWrap");
-    const container = document.querySelector("#canvasContainer");
-    const gridSizeSlider = document.querySelector("#gridSizeSlider");
-    grid.setAttribute("style", "width: 360px; height: 360px; min-width: 360px");
-    container.setAttribute("style", "width: 360px; height: 360px");
-    gridSizeSlider.setAttribute("max", "360");
-    gridSizeSlider.setAttribute("value", "360");
-    gridSizeSlider.setAttribute("step", "10");
-    createPixelGrid(15, 360);
-  } else {
-    createPixelGrid(15, 540);
-  }
-}
-
-appAdjustForMobile(getBrowserWidth());
+createPixelGrid(15, 540);
 gridSizeSlider();
 gridSliderEventListener();
 gridToggleBox();

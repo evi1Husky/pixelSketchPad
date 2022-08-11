@@ -30,6 +30,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  margin-left: 110px;
 }
 
 h1 {
@@ -42,11 +43,34 @@ h1 {
   padding-top: 7px;
 }
 
+.appContainer {
+  margin-right: 150px;
+}
+
 .app {
   display: flex;
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+@media (max-width: 837px) {
+  .instrumentPanel {
+    flex-direction: row;
+    justify-content: center;
+  }
+  #canvasContainer {
+    justify-content: center;
+  }
+  .button {
+    margin-left: 3px;
+  }
+  .appContainer {
+    margin-right: 0px;
+  }
+  .topInstrumentPanel {
+    margin-left: 0px;
+  }
 }
 
 #pixelGrid {
@@ -71,6 +95,7 @@ h1 {
   display: flex;
   background-color: transparent;
   margin-bottom: 5px;
+  justify-content: center;
 }
 
 #gridSizeSliderLabel {
@@ -273,11 +298,15 @@ h1 {
   transform: translateY(1px);
 }
 
+#pixelGridSlider {
+  margin-left: 0.8em;
+}
+
 .form-check {
   margin-top: 0.2rem;
   display: block;
   min-height: 1rem;
-  margin-left: 2em;
+  margin-left: 2.5em;
   margin-top: 20px;
 }
 .form-check .form-check-input {
@@ -329,7 +358,7 @@ h1 {
 }
 
 .form-range {
-  width: 100%;
+  width: 150px;
   height: 1.5rem;
   padding: 0;
   background-color: transparent;
@@ -460,26 +489,6 @@ h1 {
   background: #e74444;
 }
 
-@media (max-width: 700px) {
-  .instrumentPanel {
-    flex-direction: row;
-    justify-content: center;
-  }
-  #canvasContainer {
-    justify-content: center;
-  }
-  .button {
-    margin-left: 3px;
-  }
-}
-
-@media (max-width: 470px) {
-  body,
-  html {
-    overflow: hidden;
-  }
-}
-
 #footer {
   margin-top: auto;
   display: flex;
@@ -507,10 +516,4 @@ h1 {
   font-weight: 300;
   font-size: 13.5px;
   text-decoration: none;
-}
-
-@media (max-height: 700px) and (max-width: 400px) {
-  #footer {
-    display: none;
-  }
 }

@@ -12,86 +12,88 @@
       <div id="logo"></div>
       <h1>pixelSketchPad</h1>
     </div>
-    <div class="topInstrumentPanel">
-      <div class="slider">
-        <label for="gridSizeSlider" class="form-label">Canvas size</label>
-        <input
-          type="range"
-          class="form-range"
-          min="100"
-          max="540"
-          step="20"
-          value="540"
-          id="gridSizeSlider"
-        />
+    <div class="appContainer">
+      <div class="topInstrumentPanel">
+        <div class="slider">
+          <label for="gridSizeSlider" class="form-label">Canvas size</label>
+          <input
+            type="range"
+            class="form-range"
+            min="100"
+            max="540"
+            step="20"
+            value="540"
+            id="gridSizeSlider"
+          />
+        </div>
+        <div class="slider">
+          <label for="pixelGridSlider" class="form-label">Pixel size</label>
+          <input
+            type="range"
+            class="form-range"
+            min="5"
+            max="30"
+            value="15"
+            id="pixelGridSlider"
+          />
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value=""
+            id="flexCheckChecked"
+            checked
+          />
+          <label class="form-check-label" for="flexCheckChecked">
+            Pixel grid
+          </label>
+        </div>
       </div>
-      <div class="slider">
-        <label for="gridSizeSlider" class="form-label">Pixel size</label>
-        <input
-          type="range"
-          class="form-range"
-          min="5"
-          max="30"
-          value="15"
-          id="pixelGridSlider"
-        />
-      </div>
-      <div class="form-check">
-        <input
-          class="form-check-input"
-          type="checkbox"
-          value=""
-          id="flexCheckChecked"
-          checked
-        />
-        <label class="form-check-label" for="flexCheckChecked">
-          Pixel grid
-        </label>
-      </div>
-    </div>
-    <div class="app">
-      <div class="instrumentPanel">
-        <div class="colorPicker-button">
-          <input type="color" id="colorPicker" value="#000000" />
-          <button id="colorButton" class="button">Color 1</button>
-        </div>
-        <div class="colorPicker-button">
-          <input type="color" id="colorPicker2" value="#EF6B97" />
-          <button id="colorButton2" class="button">Color 2</button>
-        </div>
-        <div class="colorPicker-button">
-          <input type="color" id="colorPicker3" value="#7ce67a" />
-          <button id="colorButton3" class="button">Color 3</button>
-        </div>
-        <div class="colorPicker-button">
-          <input type="color" id="colorPicker4" value="#8D86f4" />
-          <button id="colorButton4" class="button">Color 4</button>
-        </div>
-        <div class="colorPicker-button">
-          <input type="color" id="colorPicker5" value="#80DDF4" />
-          <button id="colorButton5" class="button">Color 5</button>
-        </div>
-        <div class="colorPicker-button">
-          <input type="color" id="colorPicker6" value="#f4d68a" />
-          <button id="colorButton6" class="button">Color 6</button>
-        </div>
-        <div class="colorPicker-button">
-          <div class="eraser">
-            <button id="eraserButton" class="button">Eraser</button>
+      <div class="app">
+        <div class="instrumentPanel">
+          <div class="colorPicker-button">
+            <input type="color" id="colorPicker" value="#000000" />
+            <button id="colorButton" class="button">Color 1</button>
+          </div>
+          <div class="colorPicker-button">
+            <input type="color" id="colorPicker2" value="#EF6B97" />
+            <button id="colorButton2" class="button">Color 2</button>
+          </div>
+          <div class="colorPicker-button">
+            <input type="color" id="colorPicker3" value="#7ce67a" />
+            <button id="colorButton3" class="button">Color 3</button>
+          </div>
+          <div class="colorPicker-button">
+            <input type="color" id="colorPicker4" value="#8D86f4" />
+            <button id="colorButton4" class="button">Color 4</button>
+          </div>
+          <div class="colorPicker-button">
+            <input type="color" id="colorPicker5" value="#80DDF4" />
+            <button id="colorButton5" class="button">Color 5</button>
+          </div>
+          <div class="colorPicker-button">
+            <input type="color" id="colorPicker6" value="#f4d68a" />
+            <button id="colorButton6" class="button">Color 6</button>
+          </div>
+          <div class="colorPicker-button">
+            <div class="eraser">
+              <button id="eraserButton" class="button">Eraser</button>
+            </div>
+          </div>
+          <div class="colorPicker-button">
+            <div class="clear">
+              <button id="clearAllButton" class="button">Clear all</button>
+            </div>
           </div>
         </div>
-        <div class="colorPicker-button">
-          <div class="clear">
-            <button id="clearAllButton" class="button">Clear all</button>
+        <div id="canvasContainer">
+          <div
+            id="gridWrap"
+            style="width: 540px; height: 540px; min-width: 540px"
+          >
+            <div id="pixelGrid"></div>
           </div>
-        </div>
-      </div>
-      <div id="canvasContainer" style="width: 540px; height: 540px">
-        <div
-          id="gridWrap"
-          style="width: 540px; height: 540px; min-width: 540px"
-        >
-          <div id="pixelGrid"></div>
         </div>
       </div>
     </div>
