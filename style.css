@@ -1,13 +1,9 @@
-body,
-html {
-  /*overflow: hidden;*/
-}
-
 body {
-  background: #303034;
+  background: #2e3035;
   margin: 0px;
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
 }
 
 .titleBar {
@@ -15,10 +11,18 @@ body {
   flex-direction: row;
   justify-content: center;
   margin-bottom: 10px;
-  background: #3a3a3e;
+  background: #35383d;
   border-bottom: solid;
   border-color: #5b5d5e;
   border-width: 1px;
+}
+
+.instrumentPanel {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+  flex-wrap: wrap;
+  margin-left: 10px;
 }
 
 .topInstrumentPanel {
@@ -66,14 +70,7 @@ h1 {
 #canvasContainer {
   display: flex;
   background-color: transparent;
-}
-
-.instrumentPanel {
-  display: flex;
-  flex-direction: column;
-  margin-right: 10px;
-  flex-wrap: wrap;
-  margin-left: 10px;
+  margin-bottom: 5px;
 }
 
 #gridSizeSliderLabel {
@@ -200,7 +197,7 @@ h1 {
 
 #colorPicker5 {
   padding: 0;
-  --color: #80DDF4;
+  --color: #80ddf4;
   margin-top: 3px;
   width: 23px;
   height: 23px;
@@ -453,4 +450,67 @@ h1 {
 
 .eraser {
   margin-left: 15px;
+}
+
+#logo {
+  height: 22px;
+  width: 22px;
+  margin-top: 10px;
+  margin-right: 5px;
+  background: #e74444;
+}
+
+@media (max-width: 700px) {
+  .instrumentPanel {
+    flex-direction: row;
+    justify-content: center;
+  }
+  #canvasContainer {
+    justify-content: center;
+  }
+  .button {
+    margin-left: 3px;
+  }
+}
+
+@media (max-width: 470px) {
+  body,
+  html {
+    overflow: hidden;
+  }
+}
+
+#footer {
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 30px;
+}
+
+#footer::after {
+  background-color: #555758;
+  content: '';
+  display: block;
+  height: 1px;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%,0);
+  width: 97%;
+  margin-bottom: 28px;
+}
+
+#link {
+  color: #9a9c9c;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+@media (max-height: 700px) and (max-width: 400px) {
+  #footer {
+    display: none;
+  }
 }
