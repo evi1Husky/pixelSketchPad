@@ -44,27 +44,31 @@ function gridToggleBox() {
     if (gridCheckbox.checked) {
       gridCSS.innerHTML = ".pixel {box-shadow: 0px 0px 0px 0.1px;}";
     } else {
-      gridCSS.innerHTML = ".pixel {box-shadow: 0px 0px;}";
+      gridCSS.innerHTML = ".pixel {box-shadow: 0px 0px 0px 0px;}";
     }
   });
   document.body.appendChild(gridCSS);
 }
 
-let mouseButtonPressed = 0;
-document.body.onmousedown = function () {
-  mouseButtonPressed = 1;
-};
-document.body.onmouseup = function () {
-  mouseButtonPressed = 0;
-};
-
 function pixelEventListener(color) {
+  let mouseButtonPressed = 0;
+  document.body.onmousedown = function () {
+    mouseButtonPressed = 1;
+  };
+  document.body.onmouseup = function () {
+    mouseButtonPressed = 0;
+  };
   const pixels = document.querySelectorAll(".pixel");
   pixels.forEach((pixel) => {
     pixel.addEventListener("mouseover", () => {
       if (mouseButtonPressed == 1) {
         pixel.setAttribute("style", "background: " + color + ";");
       }
+    });
+  });
+  pixels.forEach((pixel) => {
+    pixel.addEventListener("click", () => {
+        pixel.setAttribute("style", "background: " + color + ";");
     });
   });
 }
@@ -157,7 +161,7 @@ function appAdjustForMobile(browserWidth) {
     const grid = document.querySelector("#gridWrap");
     const container = document.querySelector("#canvasContainer");
     const gridSizeSlider = document.querySelector("#gridSizeSlider");
-    grid.setAttribute("style", "360px; height: 360px; min-width: 360px");
+    grid.setAttribute("style", "width: 360px; height: 360px; min-width: 360px");
     container.setAttribute("style", "width: 360px; height: 360px");
     gridSizeSlider.setAttribute("max", "360");
     gridSizeSlider.setAttribute("value", "360");
