@@ -10,24 +10,22 @@ function findNumberOfPixels(pixelSize, gridWidth) {
 function createPixelGrid(pixelSize, gridWidth) {
   const numOfPixels = findNumberOfPixels(pixelSize, gridWidth);
   clearPixelGrid();
-  const pixelSizeString = pixelSize + 'px';
-  const grid = document.getElementById('pixelGrid');
+  const pixelSizeString = pixelSize + "px";
+  const grid = document.getElementById("pixelGrid");
   grid.setAttribute(
-    'style',
-    'grid-template-columns: repeat(auto-fill, minmax(' +
-      pixelSizeString +
-      ', 1fr))'
+    "style",
+    `grid-template-columns: repeat(auto-fill, minmax(${pixelSizeString}, 1fr))`
   );
   for (let i = 0; i < numOfPixels; i++) {
-    const pixel = document.createElement('div');
-    pixel.classList.add('pixel');
+    const pixel = document.createElement("div");
+    pixel.classList.add("pixel");
     grid.appendChild(pixel);
   }
-  pixelEventListener(getCurrentColorCode('#colorPicker'));
+  pixelEventListener(getCurrentColorCode("#colorPicker"));
 }
 
 function pixelEventListener(color) {
-  const pixels = document.querySelectorAll('.pixel');
+  const pixels = document.querySelectorAll(".pixel");
   let mouseButtonPressed = false;
   document.body.onmousedown = function () {
     mouseButtonPressed = true;
@@ -36,41 +34,41 @@ function pixelEventListener(color) {
     mouseButtonPressed = false;
   };
   pixels.forEach((pixel) => {
-    pixel.addEventListener('mouseover', () => {
+    pixel.addEventListener("mouseover", () => {
       if (mouseButtonPressed) {
-        pixel.setAttribute('style', 'background: ' + color + ';');
+        pixel.setAttribute("style", "background: " + color + ";");
       }
     });
   });
   pixels.forEach((pixel) => {
-    pixel.addEventListener('mousedown', () => {
-      pixel.setAttribute('style', 'background: ' + color + ';');
+    pixel.addEventListener("mousedown", () => {
+      pixel.setAttribute("style", "background: " + color + ";");
     });
   });
 }
 
 function clearPixelGrid() {
-  const pixels = document.getElementsByClassName('pixel');
+  const pixels = document.getElementsByClassName("pixel");
   while (pixels[0]) {
     pixels[0].parentNode.removeChild(pixels[0]);
   }
 }
 
 function gridSliderEventListener() {
-  const gridSizeSlider = document.querySelector('#gridSizeSlider');
-  document.querySelector('#pixelGridSlider').addEventListener('input', (e) => {
+  const gridSizeSlider = document.querySelector("#gridSizeSlider");
+  document.querySelector("#pixelGridSlider").addEventListener("input", (e) => {
     createPixelGrid(e.target.value, gridSizeSlider.value);
   });
 }
 
 function gridToggleBox() {
-  const gridCheckbox = document.querySelector('#flexCheckChecked');
-  const gridCSS = document.createElement('style');
-  gridCheckbox.addEventListener('change', function () {
+  const gridCheckbox = document.querySelector("#flexCheckChecked");
+  const gridCSS = document.createElement("style");
+  gridCheckbox.addEventListener("change", function () {
     if (gridCheckbox.checked) {
-      gridCSS.innerHTML = '.pixel {box-shadow: 0px 0px 0px 0.1px;}';
+      gridCSS.innerHTML = ".pixel {box-shadow: 0px 0px 0px 0.1px;}";
     } else {
-      gridCSS.innerHTML = '.pixel {box-shadow: 0px 0px;}';
+      gridCSS.innerHTML = ".pixel {box-shadow: 0px 0px;}";
     }
   });
   document.body.appendChild(gridCSS);
@@ -78,14 +76,14 @@ function gridToggleBox() {
 
 function colorPicker(colorPickerNum) {
   const colorPicker = document.querySelector(colorPickerNum);
-  colorPicker.addEventListener('input', () => {
+  colorPicker.addEventListener("input", () => {
     pixelEventListener(colorPicker.value);
   });
 }
 
 function colorButton(colorButtonNum, colorPickerNum) {
   const colorButton = document.querySelector(colorButtonNum);
-  colorButton.addEventListener('click', () => {
+  colorButton.addEventListener("click", () => {
     pixelEventListener(getCurrentColorCode(colorPickerNum));
   });
 }
@@ -96,58 +94,47 @@ function getCurrentColorCode(colorPickerNum) {
 }
 
 function eraserButton() {
-  const eraserButton = document.querySelector('#eraserButton');
-  eraserButton.addEventListener('click', () => {
-    pixelEventListener('#c8cbcd');
+  const eraserButton = document.querySelector("#eraserButton");
+  eraserButton.addEventListener("click", () => {
+    pixelEventListener("#c8cbcd");
   });
 }
 
 function clearAllButton() {
-  const clearAllButton = document.querySelector('#clearAllButton');
-  clearAllButton.addEventListener('click', () => {
+  const clearAllButton = document.querySelector("#clearAllButton");
+  clearAllButton.addEventListener("click", () => {
     pixelClear();
   });
 }
 
 function pixelClear() {
-  const pixels = document.querySelectorAll('.pixel');
+  const pixels = document.querySelectorAll(".pixel");
   pixels.forEach((pixel) => {
-    pixel.setAttribute('style', 'background: #c8cbcd;');
+    pixel.setAttribute("style", "background: #c8cbcd;");
   });
 }
 
 function gridSizeSlider() {
-  const gridSizeSlider = document.querySelector('#gridSizeSlider');
+  const gridSizeSlider = document.querySelector("#gridSizeSlider");
   const makeNewGrid = () => NewGridSize(gridSizeSlider.value);
-  gridSizeSlider.addEventListener('input', makeNewGrid);
+  gridSizeSlider.addEventListener("input", makeNewGrid);
 }
 
 function NewGridSize(width) {
   clearPixelGrid();
-  const gridDimensions = document.querySelector('#gridWrap');
+  const gridDimensions = document.querySelector("#gridWrap");
   gridDimensions.setAttribute(
-    'style',
-    'width: ' +
-      width +
-      'px' +
-      '; ' +
-      'height: ' +
-      width +
-      'px' +
-      '; ' +
-      'min-width: ' +
-      width +
-      'px' +
-      ';'
+    "style",
+    `width: ${width}px; height: ${width}px; min-width: ${width}px;`
   );
-  const pixelSize = document.querySelector('#pixelGridSlider');
+  const pixelSize = document.querySelector("#pixelGridSlider");
   createPixelGrid(pixelSize.value, width);
 }
 
 function colorPickerStyle(colorPickerNum) {
   const colorPicker = document.getElementById(colorPickerNum);
-  colorPicker.addEventListener('input', () => {
-    colorPicker.style.setProperty('--color', colorPicker.value);
+  colorPicker.addEventListener("input", () => {
+    colorPicker.style.setProperty("--color", colorPicker.value);
   });
 }
 
@@ -155,24 +142,24 @@ createPixelGrid(15, 540);
 gridSizeSlider();
 gridSliderEventListener();
 gridToggleBox();
-pixelEventListener(getCurrentColorCode('#colorPicker'));
-colorPicker('#colorPicker');
-colorPicker('#colorPicker2');
-colorPicker('#colorPicker3');
-colorPicker('#colorPicker4');
-colorPicker('#colorPicker5');
-colorPicker('#colorPicker6');
-colorButton('#colorButton', '#colorPicker');
-colorButton('#colorButton2', '#colorPicker2');
-colorButton('#colorButton3', '#colorPicker3');
-colorButton('#colorButton4', '#colorPicker4');
-colorButton('#colorButton5', '#colorPicker5');
-colorButton('#colorButton6', '#colorPicker6');
-colorPickerStyle('colorPicker');
-colorPickerStyle('colorPicker2');
-colorPickerStyle('colorPicker3');
-colorPickerStyle('colorPicker4');
-colorPickerStyle('colorPicker5');
-colorPickerStyle('colorPicker6');
+pixelEventListener(getCurrentColorCode("#colorPicker"));
+colorPicker("#colorPicker");
+colorPicker("#colorPicker2");
+colorPicker("#colorPicker3");
+colorPicker("#colorPicker4");
+colorPicker("#colorPicker5");
+colorPicker("#colorPicker6");
+colorButton("#colorButton", "#colorPicker");
+colorButton("#colorButton2", "#colorPicker2");
+colorButton("#colorButton3", "#colorPicker3");
+colorButton("#colorButton4", "#colorPicker4");
+colorButton("#colorButton5", "#colorPicker5");
+colorButton("#colorButton6", "#colorPicker6");
+colorPickerStyle("colorPicker");
+colorPickerStyle("colorPicker2");
+colorPickerStyle("colorPicker3");
+colorPickerStyle("colorPicker4");
+colorPickerStyle("colorPicker5");
+colorPickerStyle("colorPicker6");
 eraserButton();
 clearAllButton();
