@@ -10,7 +10,7 @@ function findNumberOfPixels(pixelSize, gridWidth) {
 function createPixelGrid(pixelSize, gridWidth) {
   const numOfPixels = findNumberOfPixels(pixelSize, gridWidth);
   clearPixelGrid();
-  const pixelSizeString = pixelSize + "px";
+  const pixelSizeString = `${pixelSize}px`;
   const grid = document.getElementById("pixelGrid");
   grid.setAttribute(
     "style",
@@ -36,13 +36,13 @@ function pixelEventListener(color) {
   pixels.forEach((pixel) => {
     pixel.addEventListener("mouseover", () => {
       if (mouseButtonPressed) {
-        pixel.setAttribute("style", "background: " + color + ";");
+        pixel.setAttribute("style", `background: ${color};`);
       }
     });
   });
   pixels.forEach((pixel) => {
     pixel.addEventListener("mousedown", () => {
-      pixel.setAttribute("style", "background: " + color + ";");
+      pixel.setAttribute("style", `background: ${color};`);
     });
   });
 }
