@@ -1,26 +1,34 @@
-function createPixelGrid(pixelSize, gridWidth) {
-  pixelSize = Math.round(pixelSize);
-  let numPixels = gridWidth / pixelSize;
-  numPixels *= numPixels;
-  if (numPixels % 2 == 0) {
-    clearPixelGrid();
-    const pixelSizeString = pixelSize + "px";
-    const grid = document.getElementById("pixelGrid");
-    grid.setAttribute(
-      "style",
-      "grid-template-columns: repeat(auto-fill, minmax(" +
-        pixelSizeString +
-        ", 1fr))"
-    );
-    for (let i = 0; i < numPixels; i++) {
-      const pixel = document.createElement("div");
-      pixel.classList.add("pixel");
-      grid.appendChild(pixel);
-    }
-    pixelEventListener(getCurrentColorCode("#colorPicker"));
-    return;
+function findNumberOfPixels(pixelSize, gridWidth) {
+  let gridHeight = gridWidth;
+  let numOfPixelsWidth = gridWidth / pixelSize;
+  let numOfPixelsLength = gridHeight / pixelSize;
+  let numOfPixels = numOfPixelsWidth * numOfPixelsLength;
+  if (
+    numOfPixels % numOfPixelsWidth == 0 &&
+    numOfPixels % numOfPixelsLength == 0
+  ) {
+    return numOfPixels;
   }
-  return createPixelGrid(pixelSize - 1, gridWidth);
+  return findNumberOfPixels(pixelSize, gridWidth - 1);
+}
+
+function createPixelGrid(pixelSize, gridWidth) {
+  let numOfPixels = findNumberOfPixels(pixelSize, gridWidth);
+  clearPixelGrid();
+  const pixelSizeString = pixelSize + "px";
+  const grid = document.getElementById("pixelGrid");
+  grid.setAttribute(
+    "style",
+    "grid-template-columns: repeat(auto-fill, minmax(" +
+      pixelSizeString +
+      ", 1fr))"
+  );
+  for (let i = 0; i < numOfPixels; i++) {
+    const pixel = document.createElement("div");
+    pixel.classList.add("pixel");
+    grid.appendChild(pixel);
+  }
+  pixelEventListener(getCurrentColorCode("#colorPicker"));
 }
 
 function pixelEventListener(color) {
