@@ -1,7 +1,7 @@
 function findNumberOfPixels(pixelSize, gridWidth) {
   const numOfPixelsRow = gridWidth / pixelSize;
   const numOfPixels = numOfPixelsRow * numOfPixelsRow;
-  if (numOfPixels % numOfPixelsRow == 0) {
+  if (numOfPixels % numOfPixelsRow === 0) {
     return numOfPixels;
   }
   return findNumberOfPixels(pixelSize, gridWidth - 1);
