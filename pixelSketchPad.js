@@ -139,8 +139,24 @@ function colorPickerStyle(colorPickerNum) {
 }
 
 function randomHexGenerator() {
-  const symbolArray = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
-    'A', 'B', 'C', 'D', 'E', 'F'];
+  const symbolArray = [
+    '0',
+    '1',
+    '2',
+    '3',
+    '4',
+    '5',
+    '6',
+    '7',
+    '8',
+    '9',
+    'A',
+    'B',
+    'C',
+    'D',
+    'E',
+    'F',
+  ];
   const hexArray = ['#'];
   for (let i = 0; i < 6; i++) {
     const randomIndex = Math.floor(Math.random() * symbolArray.length);
