@@ -419,6 +419,10 @@ h1 {
 }
 
 @media (max-width: 837px) {
+  #footer {
+    display: none;
+  }
+
   .instrumentPanel {
     flex-direction: row;
     justify-content: center;
