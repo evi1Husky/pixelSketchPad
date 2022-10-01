@@ -66,9 +66,9 @@ function gridToggleBox() {
   const gridCSS = document.createElement('style');
   gridCheckbox.addEventListener('change', function () {
     if (gridCheckbox.checked) {
-      gridCSS.innerHTML = '.pixel {box-shadow: 0px 0px 0px 0.1px;}';
+      gridCSS.innerHTML = '.pixel {box-shadow: 0 0 0 0.006rem;}';
     } else {
-      gridCSS.innerHTML = '.pixel {box-shadow: 0px 0px;}';
+      gridCSS.innerHTML = '.pixel {box-shadow: 0 0 0 0rem;}';
     }
   });
   document.body.appendChild(gridCSS);
@@ -186,19 +186,21 @@ function adjustForMobileBrowsers() {
   if (window.innerWidth < 450) {
     const gridSizeSlider = document.getElementById('gridSizeSlider');
     const gridWrap = document.getElementById('gridWrap');
+    const gridCheck = document.getElementById('gridCheck');
     createPixelGrid(15, 360);
     gridSizeSlider.setAttribute('value', '360');
     gridSizeSlider.setAttribute('max', '360');
     gridWrap.setAttribute('style', 'width: 360px', 'height: 360px', 'min-width: 360px')
+    gridCheck.setAttribute('style', 'display: none');
   } else {
     createPixelGrid(15, 460);
+    gridToggleBox();
   }
 }
 
 adjustForMobileBrowsers()
 gridSizeSlider();
 gridSliderEventListener();
-gridToggleBox();
 pixelEventListener(getCurrentColorCode('#colorPicker'));
 colorPicker('#colorPicker');
 colorPicker('#colorPicker2');

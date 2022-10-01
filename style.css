@@ -1,6 +1,7 @@
 body {
   background: #2e3035;
   margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -60,11 +61,10 @@ h1 {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(0px, 1fr));
   background-color: transparent;
-  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
 
 .pixel {
-  box-shadow: 0 0 0 0.006rem;
+  /* box-shadow: 0 0 0 0.006rem; */
   background: #c8cbcd;
 }
 
