@@ -64,7 +64,6 @@ h1 {
 }
 
 .pixel {
-  /* box-shadow: 0 0 0 0.006rem; */
   background: #c8cbcd;
 }
 
@@ -72,6 +71,7 @@ h1 {
   content: '';
   display: block;
   padding-top: 100%;
+
 }
 
 #canvasContainer {
