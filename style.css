@@ -419,6 +419,13 @@ h1 {
 }
 
 @media (max-width: 837px) {
+
+  body {
+    max-height: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
   #footer {
     display: none;
   }
@@ -430,10 +437,6 @@ h1 {
 
   #canvasContainer {
     justify-content: center;
-  }
-
-  .button {
-    margin-left: 3px;
   }
 
   .appContainer {
@@ -451,10 +454,16 @@ h1 {
     margin-left: 2.5rem;
     margin-top: 0.4rem;
   }
+
+  .form-range {
+    margin-right: 1.4rem;
+  }
+
 }
 
 @media (max-width: 320px) {
   .form-range {
     width: 8rem;
+    margin-left: 1rem;
   }
 }
