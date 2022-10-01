@@ -429,6 +429,7 @@ h1 {
   body {
     overflow: hidden;
     overscroll-behavior: none;
+    position: fixed;
   }
 
   #colorPickerButton4 {
