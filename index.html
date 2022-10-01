@@ -16,99 +16,51 @@
       <div class="topInstrumentPanel">
         <div class="slider">
           <label for="gridSizeSlider" class="form-label">Canvas size</label>
-          <input
-            type="range"
-            class="form-range"
-            min="100"
-            max="540"
-            value="540"
-            id="gridSizeSlider"
-          />
+          <input type="range" class="form-range" min="50" max="540" value="460"
+            id="gridSizeSlider"/>
         </div>
         <div class="slider">
           <label for="pixelGridSlider" class="form-label">Pixel size</label>
-          <input
-            type="range"
-            class="form-range"
-            min="5"
-            max="50"
-            value="25"
-            id="pixelGridSlider"
-          />
+          <input type="range" class="form-range" min="5" max="50" value="25"
+            id="pixelGridSlider"/>
         </div>
-        <div class="form-check">
-          <input
-            class="form-check-input"
-            type="checkbox"
-            value=""
-            id="flexCheckChecked"
-            checked
-          />
-          <label class="form-check-label" for="flexCheckChecked">
-            Pixel grid
-          </label>
-        </div>
+
       </div>
       <div class="app">
         <div class="instrumentPanel">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"
+              checked/>
+            <label class="form-check-label" for="flexCheckChecked">Pixel grid</label>
+          </div>
           <div class="colorPicker-button">
             <label for="colorPicker"></label>
-            <input
-              type="color"
-              class="color"
-              id="colorPicker"
-              value="#000000"
-            />
+            <input type="color" class="color" id="colorPicker" value="#000000"/>
             <button id="colorButton" class="button">Color 1</button>
           </div>
           <div class="colorPicker-button">
             <label for="colorPicker2"></label>
-            <input
-              type="color"
-              class="color"
-              id="colorPicker2"
-              value="#EF6B97"
-            />
+            <input type="color" class="color" id="colorPicker2" value="#EF6B97"/>
             <button id="colorButton2" class="button">Color 2</button>
           </div>
           <div class="colorPicker-button">
             <label for="colorPicker3"></label>
-            <input
-              type="color"
-              class="color"
-              id="colorPicker3"
-              value="#7ce67a"
-            />
+            <input type="color" class="color" id="colorPicker3" value="#7ce67a"/>
             <button id="colorButton3" class="button">Color 3</button>
           </div>
           <div class="colorPicker-button">
             <label for="colorPicker4"></label>
-            <input
-              type="color"
-              class="color"
-              id="colorPicker4"
-              value="#8D86f4"
-            />
+            <input type="color" class="color" id="colorPicker4" value="#8D86f4"/>
             <button id="colorButton4" class="button">Color 4</button>
           </div>
           <div class="colorPicker-button">
             <label for="colorPicker5"></label>
-            <input
-              type="color"
-              class="color"
-              id="colorPicker5"
-              value="#80DDF4"
-            />
+            <input type="color" class="color" id="colorPicker5" value="#80DDF4"/>
             <button id="colorButton5" class="button">Color 5</button>
           </div>
           <div class="colorPicker-button">
             <label for="colorPicker6"></label>
-            <input
-              type="color"
-              class="color"
-              id="colorPicker6"
-              value="#f4d68a"
-            />
+            <input type="color" class="color" id="colorPicker6" value="#f4d68a"/>
             <button id="colorButton6" class="button">Color 6</button>
           </div>
           <div class="colorPicker-button">
@@ -128,22 +80,16 @@
           </div>
         </div>
         <div id="canvasContainer">
-          <div
-            id="gridWrap"
-            style="width: 540px; height: 540px; min-width: 540px"
-          >
+          <div id="gridWrap"
+            style="width: 460px; height: 460px; min-width: 460px" >
             <div id="pixelGrid"></div>
           </div>
         </div>
       </div>
     </div>
     <footer id="footer">
-      <a
-        id="link"
-        href="https://github.com/roadkillYeenXwX/pixelSketchPad"
-        target="_blank"
-        >GitHub</a
-      >
+      <a id="link"
+      href="https://github.com/evi1Husky/pixelSketchPad" target="_blank" >GitHub</a>
     </footer>
     <script src="pixelSketchPad.js"></script>
   </body>

@@ -6,7 +6,7 @@ function findNumberOfPixels(pixelSize, gridWidth) {
   }
   return findNumberOfPixels(pixelSize, gridWidth - 1);
 }
-
+ 
 function createPixelGrid(pixelSize, gridWidth) {
   const numOfPixels = findNumberOfPixels(pixelSize, gridWidth);
   clearPixelGrid();
@@ -140,22 +140,8 @@ function colorPickerStyle(colorPickerNum) {
 
 function randomHexGenerator() {
   const symbolArray = [
-    '0',
-    '1',
-    '2',
-    '3',
-    '4',
-    '5',
-    '6',
-    '7',
-    '8',
-    '9',
-    'A',
-    'B',
-    'C',
-    'D',
-    'E',
-    'F',
+    '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
+    'A', 'B', 'C', 'D', 'E','F',
   ];
   const hexArray = ['#'];
   for (let i = 0; i < 6; i++) {
@@ -196,7 +182,16 @@ function randomButton() {
   });
 }
 
-createPixelGrid(15, 540);
+if (window.innerWidth < 450) {
+  const gridSizeSlider = document.getElementById('gridSizeSlider');
+  const gridWrap = document.getElementById('gridWrap');
+  createPixelGrid(15, 300);
+  gridSizeSlider.setAttribute('value', '300');
+  gridWrap.setAttribute('style', 'width: 300px', 'height: 300px', 'min-width: 300px')
+} else {
+  createPixelGrid(15, 460);
+}
+
 gridSizeSlider();
 gridSliderEventListener();
 gridToggleBox();

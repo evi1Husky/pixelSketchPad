@@ -31,6 +31,7 @@ body {
   flex-direction: row;
   justify-content: center;
   margin-left: 110px;
+  
 }
 
 h1 {
@@ -54,28 +55,6 @@ h1 {
   flex-wrap: wrap;
 }
 
-@media (max-width: 837px) {
-  .instrumentPanel {
-    flex-direction: row;
-    justify-content: center;
-  }
-
-  #canvasContainer {
-    justify-content: center;
-  }
-
-  .button {
-    margin-left: 3px;
-  }
-
-  .appContainer {
-    margin-right: 0;
-  }
-
-  .topInstrumentPanel {
-    margin-left: 0;
-  }
-}
 
 #pixelGrid {
   display: grid;
@@ -98,7 +77,7 @@ h1 {
 #canvasContainer {
   display: flex;
   background-color: transparent;
-  margin-bottom: 5px;
+  margin-bottom: 2px;
   justify-content: center;
 }
 
@@ -217,10 +196,9 @@ h1 {
 }
 
 .form-check {
-  margin-top: 1.25rem;
   display: block;
-  min-height: 1rem;
   margin-left: 2.5em;
+  margin-bottom: 0.7rem;
 }
 
 .form-check .form-check-input {
@@ -275,7 +253,7 @@ h1 {
 }
 
 .form-range {
-  width: 150px;
+  width: 9.5rem;
   height: 1.5rem;
   padding: 0;
   background-color: transparent;
@@ -438,4 +416,41 @@ h1 {
   font-weight: 300;
   font-size: 0.844rem;
   text-decoration: none;
+}
+
+@media (max-width: 837px) {
+  .instrumentPanel {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  #canvasContainer {
+    justify-content: center;
+  }
+
+  .button {
+    margin-left: 3px;
+  }
+
+  .appContainer {
+    margin-right: 0;
+  }
+
+  .topInstrumentPanel {
+    margin-left: 0;
+  }
+
+  .form-check {
+    margin-left: 0rem;
+    margin-bottom: 0rem;
+    margin-right: 1.7rem;
+    margin-left: 2.5rem;
+    margin-top: 0.4rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .form-range {
+    width: 8rem;
+  }
 }
