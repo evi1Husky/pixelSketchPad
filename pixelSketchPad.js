@@ -66,7 +66,7 @@ function gridToggleBox() {
   const gridCSS = document.createElement('style');
   gridCheckbox.addEventListener('change', function () {
     if (gridCheckbox.checked) {
-      gridCSS.innerHTML = '.pixel {box-shadow: 0 0 0 0.006rem;}';
+      gridCSS.innerHTML = '.pixel {box-shadow: 0 0 0 0.01rem;}';
     } else {
       gridCSS.innerHTML = '.pixel {box-shadow: none;}';
     }
@@ -191,10 +191,10 @@ function adjustForMobileBrowsers() {
     gridSizeSlider.setAttribute('value', '360');
     gridSizeSlider.setAttribute('max', '360');
     gridWrap.setAttribute('style', 'width: 360px', 'height: 360px', 'min-width: 360px')
-    // gridCheck.setAttribute('style', 'display: none');
+    gridCheck.setAttribute('style', 'display: none');
   } else {
     createPixelGrid(15, 460);
-
+    gridToggleBox();
   }
 }
 
@@ -202,7 +202,6 @@ adjustForMobileBrowsers()
 gridSizeSlider();
 gridSliderEventListener();
 pixelEventListener(getCurrentColorCode('#colorPicker'));
-gridToggleBox();
 colorPicker('#colorPicker');
 colorPicker('#colorPicker2');
 colorPicker('#colorPicker3');
