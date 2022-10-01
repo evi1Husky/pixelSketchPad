@@ -430,6 +430,18 @@ h1 {
     overflow: hidden;
   }
 
+  #colorPickerButton4 {
+    display: none;
+  }
+
+  #colorPickerButton5 {
+    display: none;
+  }
+
+  #colorPickerButton6 {
+    display: none;
+  }
+
   #footer {
     display: none;
   }
