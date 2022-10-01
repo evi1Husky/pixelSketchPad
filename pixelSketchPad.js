@@ -6,7 +6,7 @@ function findNumberOfPixels(pixelSize, gridWidth) {
   }
   return findNumberOfPixels(pixelSize, gridWidth - 1);
 }
- 
+
 function createPixelGrid(pixelSize, gridWidth) {
   const numOfPixels = findNumberOfPixels(pixelSize, gridWidth);
   clearPixelGrid();
@@ -182,16 +182,20 @@ function randomButton() {
   });
 }
 
-if (window.innerWidth < 450) {
-  const gridSizeSlider = document.getElementById('gridSizeSlider');
-  const gridWrap = document.getElementById('gridWrap');
-  createPixelGrid(15, 300);
-  gridSizeSlider.setAttribute('value', '300');
-  gridWrap.setAttribute('style', 'width: 300px', 'height: 300px', 'min-width: 300px')
-} else {
-  createPixelGrid(15, 460);
+function adjustForMobileBrowsers() {
+  if (window.innerWidth < 450) {
+    const gridSizeSlider = document.getElementById('gridSizeSlider');
+    const gridWrap = document.getElementById('gridWrap');
+    createPixelGrid(15, 360);
+    gridSizeSlider.setAttribute('value', '360');
+    gridSizeSlider.setAttribute('max', '360');
+    gridWrap.setAttribute('style', 'width: 360px', 'height: 360px', 'min-width: 360px')
+  } else {
+    createPixelGrid(15, 460);
+  }
 }
 
+adjustForMobileBrowsers()
 gridSizeSlider();
 gridSliderEventListener();
 gridToggleBox();
