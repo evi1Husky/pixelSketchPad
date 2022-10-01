@@ -420,9 +420,13 @@ h1 {
 
 @media (max-width: 837px) {
 
-  body {
+  * {
     max-height: 100%;
     max-width: 100%;
+    overscroll-behavior: none;
+  }
+
+  body {
     overflow: hidden;
   }
 
