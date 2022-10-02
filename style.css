@@ -431,6 +431,15 @@ h1 {
     position: fixed;
   }
 
+  .colorPicker-button {
+    margin-right: 1rem;
+    margin-left: 1rem;
+  }
+
+  .eraser, .clear, .random {
+    margin: 0;
+  }
+
   #colorPickerButton5 {
     display: none;
   }

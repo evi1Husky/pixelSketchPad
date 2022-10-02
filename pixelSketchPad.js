@@ -24,24 +24,43 @@ function createPixelGrid(pixelSize, gridWidth) {
   pixelEventListener(getCurrentColorCode('#colorPicker'));
 }
 
+// function pixelEventListener(color) {
+//   const pixels = document.querySelectorAll('.pixel');
+//   let mouseButtonPressed = false;
+//   document.body.onmousedown = function () {
+//     mouseButtonPressed = true;
+//   };
+//   document.body.onmouseup = function () {
+//     mouseButtonPressed = false;
+//   };
+//   pixels.forEach((pixel) => {
+//     pixel.addEventListener('mouseover', () => {
+//       if (mouseButtonPressed) {
+//         pixel.setAttribute('style', `background: ${color};`);
+//       }
+//     });
+//   });
+//   pixels.forEach((pixel) => {
+//     pixel.addEventListener('mousedown', () => {
+//       pixel.setAttribute('style', `background: ${color};`);
+//     });
+//   });
+// }
+
 function pixelEventListener(color) {
   const pixels = document.querySelectorAll('.pixel');
-  let mouseButtonPressed = false;
-  document.body.onmousedown = function () {
-    mouseButtonPressed = true;
-  };
-  document.body.onmouseup = function () {
-    mouseButtonPressed = false;
-  };
   pixels.forEach((pixel) => {
-    pixel.addEventListener('mouseover', () => {
-      if (mouseButtonPressed) {
-        pixel.setAttribute('style', `background: ${color};`);
-      }
+    pixel.addEventListener('touchstart', () => {
+      pixel.setAttribute('style', `background: ${color};`);
     });
   });
   pixels.forEach((pixel) => {
-    pixel.addEventListener('mousedown', () => {
+    pixel.addEventListener('touchend', () => {
+      pixel.setAttribute('style', `background: ${color};`);
+    });
+  });
+  pixels.forEach((pixel) => {
+    pixel.addEventListener('touchmove', () => {
       pixel.setAttribute('style', `background: ${color};`);
     });
   });
