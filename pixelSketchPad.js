@@ -50,17 +50,12 @@ function createPixelGrid(pixelSize, gridWidth) {
 function pixelEventListener(color) {
   const pixels = document.querySelectorAll('.pixel');
   pixels.forEach((pixel) => {
-    pixel.addEventListener('touchstart', () => {
+    pixel.addEventListener('pointerdown', () => {
       pixel.setAttribute('style', `background: ${color};`);
     });
   });
   pixels.forEach((pixel) => {
-    pixel.addEventListener('touchend', () => {
-      pixel.setAttribute('style', `background: ${color};`);
-    });
-  });
-  pixels.forEach((pixel) => {
-    pixel.addEventListener('touchmove', () => {
+    pixel.addEventListener('pointerMove', () => {
       pixel.setAttribute('style', `background: ${color};`);
     });
   });
