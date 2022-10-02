@@ -431,10 +431,6 @@ h1 {
     position: fixed;
   }
 
-  #colorPickerButton4 {
-    display: none;
-  }
-
   #colorPickerButton5 {
     display: none;
   }
@@ -442,10 +438,6 @@ h1 {
   #colorPickerButton6 {
     display: none;
   }
-
-  /* #footer {
-    display: none;
-  } */
 
   .instrumentPanel {
     flex-direction: row;
