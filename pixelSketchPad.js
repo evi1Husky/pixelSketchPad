@@ -190,7 +190,8 @@ function adjustForMobileBrowsers() {
     createPixelGrid(15, 360);
     gridSizeSlider.setAttribute('value', '360');
     gridSizeSlider.setAttribute('max', '360');
-    gridWrap.setAttribute('style', 'width: 360px', 'height: 360px', 'min-width: 360px')
+    gridWrap.setAttribute('style', 'width: 360px', 
+      'height: 360px', 'min-width: 360px')
     gridCheck.setAttribute('style', 'display: none');
   } else {
     createPixelGrid(15, 460);
